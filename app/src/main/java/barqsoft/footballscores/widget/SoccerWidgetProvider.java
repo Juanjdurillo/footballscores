@@ -89,6 +89,12 @@ public class SoccerWidgetProvider extends RemoteViewsService {
                 away        = data.getString(4);
                 goals_home  = data.getString(6);
                 goals_away  = data.getString(7);
+                if (goals_home.equals("-1"))
+                    goals_home = "";
+
+                if (goals_away.equals("-1"))
+                    goals_away = "";
+
 
                 views.setTextViewText(R.id.game,home+" "+goals_home+"-"+goals_away+" "+away);
 
